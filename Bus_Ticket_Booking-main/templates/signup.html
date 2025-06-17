@@ -1,0 +1,43 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="{% static 'css/signup.css' %}">
+</head>
+<body>
+    
+    <form action="create" method="POST">
+        {% csrf_token %}
+        <video autoplay muted loop class="video-bg">
+        <source src="{% static 'video/Marvel Studios - IntroLogo New Version (2016)  HD 1080p 60fps.mp4' %}"  type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+        <div class="outer">
+            <div class="inner">
+                <div class="login-container">
+                    {% csrf_token %}
+                    <h1>SIGNUP</h1>
+                    <label for="name">ENTER YOUR NAME</label><br>
+                    <input type="text" name="name"><br><br>
+                    <label for="phno">ENTER YOUR PHONE</label><br>
+                    <input type="number" name="phno" id=""><br><br>
+                    <!-- <input type="nu" name="phno"><br><br> -->
+                    <label for="password">ENTER YOUR PASSWORD</label><br>
+                    <input type="text" name="password"><br><br>
+                    <label for="c_p">ENTER YOUR C_PASSWORD</label><br>
+                    <input type="text" name="c_p"><br><br>
+                    <button type="submit" id='btn'>CREATE</button><br>
+                    <h2>{{error}}</h2>
+                    <p>ALREADY AN ACCOUNT: <a href="/">Login</a></p>
+                </div>
+
+            </div>
+        </div>
+
+    </form>
+    
+</body>
+</html>

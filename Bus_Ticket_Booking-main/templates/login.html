@@ -1,0 +1,35 @@
+
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="{% static 'css/login.css' %}">
+    <!-- <link rel="stylesheet" href="{% static 'css/login.css' %}"> -->
+    <!-- <link rel="stylesheet" href="{% static 'css/login.css' %}"> -->
+</head>
+<body>
+    <video autoplay muted loop class="video-bg">
+        <source src="{% static 'video/Marvel Studios - IntroLogo New Version (2016)  HD 1080p 60fps.mp4' %}"  type="video/mp4">
+    </video>
+
+    <!-- Login Form -->
+    <div class="login-container">
+        <h2>Login</h2>
+        <form method="POST" action="verify">
+            {% csrf_token %}
+            <h2>WELCOME TO LOGIN PAGE</h2>
+                    <label for="u_name">User_name</label><br>
+                    <input type="text" name="u_name" id=""><br>
+                    <label for="pass">Password</label><br>
+                    <input type="password" name="pass" id="pass"><br>
+
+                    <button id="btn">LOGIN</button><br>
+                    <h3>{{error}}</h3>
+                    <h4>CREATE AN ACCOUNT : <a href="signup">signup</a></h4>
+        </form>
+    </div>
+</body>
+</html>

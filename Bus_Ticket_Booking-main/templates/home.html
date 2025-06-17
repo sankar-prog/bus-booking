@@ -1,0 +1,49 @@
+<!-- {% load static %} -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BUSAPP</title>
+    <link rel="stylesheet" href="{% static 'css/home.css' %}">
+</head>
+<body>
+    <video autoplay muted loop class="video-bg">
+        <source src="{% static 'video/Marvel Studios - IntroLogo New Version (2016)  HD 1080p 60fps.mp4' %}"  type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+    <div class="table">
+        <div class="login-container">
+            <table border="1" width='100%' height="100px">
+                <tr>
+                    <th>Service_No</th>
+                    <th>Start</th>
+                    <th>End</th>
+                    <th>Seat_Available</th>
+                    <th>Price</th>
+                    <th>Book</th>
+                    <th>Cancel</th>
+                </tr>
+                {% for i in res %}
+                <tr>
+                    <td>{{ i.service_no }}</td>
+                    <td>{{ i.start }}</td>
+                    <td>{{ i.end }}</td>
+                    <td>{{ i.seats_available }}</td>
+                    <td>{{ i.price }}</td>
+                    <td><a href="{% url 'bookbus' %}?service_no={{i.service_no}}&price={{i.price}}"><button id="btn">BOOK A BUS</button></a><br></td>
+                    <td><a href="cancelbus"><button id="btn">CANCEL A BUS</button></a><br></td>
+                </tr>
+                {% endfor %}
+            </table>
+        </div>
+    </div>
+    <div class="outer">
+        <div class="inner">
+            <!-- <div class="form">
+                
+            </div> -->
+        </div>
+    </div>
+</body>
+</html>

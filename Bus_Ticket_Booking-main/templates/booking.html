@@ -1,0 +1,47 @@
+
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="{% static 'css/l.css' %}">
+</head>
+<body>
+
+    <!-- Background Video -->
+    <video autoplay muted loop class="video-bg">
+        <source src="{% static 'video/Marvel Studios - IntroLogo New Version (2016)  HD 1080p 60fps.mp4' %}"  type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+
+    <!-- Login Form -->
+    <div class="login-container">
+        <h2>Login</h2>
+        <form action="conform">
+            <label for="no_of_seats">NO_OF_SEATS</label><br>
+            <input type="number" name="no_of_seats" id=""><br><br>
+            <input type="date" name="travelling_date" min="{{ today }}" id="">
+            <input type="hidden" name="service_no" value="{{ service_no }}"><br>
+            <input type="hidden" name="price" value="{{ price }}"><br>
+    
+            <button type="submit" id="btn">BOOK</button>
+    </form>
+    {% if error %}
+    <p><h3 style="background-color: red;" >{{ error }}</h3></p>
+    {% endif %}
+        
+    </div>
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+

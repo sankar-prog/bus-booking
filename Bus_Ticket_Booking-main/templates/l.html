@@ -1,0 +1,30 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="{% static 'css/l.css' %}">
+</head>
+<body>
+
+    <!-- Background Video -->
+    <video autoplay muted loop class="video-bg">
+        <source src="{% static 'video/Marvel Studios - IntroLogo New Version (2016)  HD 1080p 60fps.mp4' %}"  type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+
+    <!-- Login Form -->
+    <div class="login-container">
+        <h2>Login</h2>
+        <form method="POST" action="">
+            {% csrf_token %}
+            <input type="text" name="username" placeholder="Username" required><br><br>
+            <input type="password" name="password" placeholder="Password" required><br><br>
+            <button type="submit">Login</button>
+        </form>
+    </div>
+
+</body>
+</html>
